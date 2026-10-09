@@ -1,6 +1,6 @@
 # Tasks for Today Management System
 
-Technical Summative Assessment 1 project built with CodeIgniter 4.
+Technical Summative Assessment 2 continuation project built with CodeIgniter 4.
 
 ## Requirements
 
@@ -11,7 +11,7 @@ Technical Summative Assessment 1 project built with CodeIgniter 4.
 ## Setup
 
 1. Install the project dependencies with `composer install`.
-2. Create a MySQL database named `tasks_tsa1`.
+2. Create a MySQL database named `tasks_tsa2`.
 3. Copy `.env.example` to `.env` and set the database username, password, host, and port.
 4. Run the migration and application seeder:
 
@@ -22,7 +22,12 @@ Technical Summative Assessment 1 project built with CodeIgniter 4.
 
 5. Start the application with `php spark serve` and open the configured base URL.
 
-The seeder creates eight tasks across four dates, including `2026-10-09`, and exactly one demo user.
+The seeder creates eight tasks across four dates, including `2026-10-09`, and exactly one demo user. Run the second migration after the TSA1 migration has already been applied.
+
+## Demo login
+
+- Username: `demo.user`
+- Password: `Password123`
 
 ## Routes
 
@@ -33,7 +38,9 @@ The seeder creates eight tasks across four dates, including `2026-10-09`, and ex
 
 ## Database
 
-The application migration is `app/Database/Migrations/2026-10-09-000001_CreateTasksAndUsers.php`.
+The original application migration is `app/Database/Migrations/2026-10-09-000001_CreateTasksAndUsers.php`. TSA2 changes are in `app/Database/Migrations/2026-10-09-000002_AddTsa2AuthenticationAndArchiving.php`.
 The application seeder is `app/Database/Seeds/Tsa1Seeder.php`.
 
-The `tasks` table contains `title`, `status`, `task_date`, and `created_at`. The `users` table contains `username`, `full_name`, `email`, and `created_at`.
+The `tasks` table contains `title`, `status`, `task_date`, `created_at`, and `is_archived`. The `users` table contains `username`, `full_name`, `email`, `password`, and `created_at`.
+
+The TSA2 database export is `database/tsa2_tasks_export.sql`.

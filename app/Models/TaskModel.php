@@ -10,5 +10,5 @@ class TaskModel extends Model
     protected $primaryKey = 'id';
     protected $returnType = 'array';
     protected $useTimestamps = false;
-    protected $allowedFields = ['title', 'status', 'task_date', 'created_at'];
+    protected $allowedFields = ['title', 'status', 'task_date', 'created_at', 'is_archived'];
 }

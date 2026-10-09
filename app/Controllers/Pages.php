@@ -8,7 +8,7 @@ class Pages extends BaseController
 {
     public function index(): string
     {
-        $tasks = (new TaskModel())->where('task_date', date('Y-m-d'))->findAll();
+        $tasks = (new TaskModel())->where('task_date', date('Y-m-d'))->where('is_archived', 0)->findAll();
 
         return view('partials/header', ['title' => 'Welcome'])
             . view('pages/home', ['tasks' => $tasks, 'today' => date('Y-m-d')])

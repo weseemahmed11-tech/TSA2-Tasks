@@ -13,6 +13,14 @@
             <a href="<?= site_url('tasks') ?>">Task List</a>
             <a href="<?= site_url('profile') ?>">Profile</a>
             <a href="<?= site_url('about') ?>">About</a>
+            <?php if (session()->get('isLoggedIn')): ?>
+                <a href="<?= site_url('tasks/new') ?>">New Task</a>
+                <form method="post" action="<?= site_url('logout') ?>" class="nav-form">
+                    <button type="submit">Logout</button>
+                </form>
+            <?php else: ?>
+                <a href="<?= site_url('login') ?>">Login</a>
+            <?php endif; ?>
         </nav>
     </header>
     <main>

@@ -1,6 +1,8 @@
 <h1>Welcome to Tasks for Today</h1>
 <p>Here are the tasks scheduled for today, <?= esc($today) ?>.</p>
 
+<?php if ($message = session()->getFlashdata('message')): ?><p class="success"><?= esc($message) ?></p><?php endif; ?>
+
 <?php if ($tasks === []): ?>
     <p>No tasks are scheduled for today.</p>
 <?php else: ?>
